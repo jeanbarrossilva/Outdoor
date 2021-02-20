@@ -1,7 +1,6 @@
 package com.jeanbarrossilva.outdoor.ui
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -45,26 +44,19 @@ fun MessageUI(
             onTextSizeDecrease = { size -= sizeDiff },
             onTextSizeIncrease = { size += sizeDiff },
             onBoldToggle = { isBold = it },
-            onAlignStart = { alignment = TextAlign.Start },
-            onJustify = { alignment = TextAlign.Justify },
-            onCenter = { alignment = TextAlign.Center },
-            onAlignEnd = { alignment = TextAlign.End }
+            onAlignmentChange = { alignment = it }
         ) { height ->
-            Box(
+            Text(
+                dynamicMessage,
                 Modifier
                     .padding(bottom = height)
                     .padding(30.dp)
-                    .fillMaxSize()
-            ) {
-                Text(
-                    dynamicMessage,
-                    Modifier
-                        .align(Alignment.Center),
-                    fontSize = size,
-                    fontWeight = weight,
-                    textAlign = alignment
-                )
-            }
+                    .align(Alignment.Center)
+                    .fillMaxWidth(),
+                fontSize = size,
+                fontWeight = weight,
+                textAlign = alignment
+            )
         }
     }
 }

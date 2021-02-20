@@ -9,38 +9,39 @@ import androidx.compose.material.icons.rounded.FormatAlignLeft
 import androidx.compose.material.icons.rounded.FormatAlignRight
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
 import com.jeanbarrossilva.outdoor.extension.Extensions.isLtr
 import com.jeanbarrossilva.outdoor.ui.defaults.OutdoorTheme
 
 @Composable
-fun AlignmentButtons(modifier: Modifier = Modifier, onAlignStart: () -> Unit, onJustify: () -> Unit, onCenter: () -> Unit, onAlignEnd: () -> Unit) {
+fun AlignmentButtons(modifier: Modifier = Modifier, onAlignmentChange: (TextAlign) -> Unit) {
     val alignmentStartIcon = if (isLtr()) Icons.Rounded.FormatAlignLeft else Icons.Rounded.FormatAlignRight
     val alignmentEndIcon = if (isLtr()) Icons.Rounded.FormatAlignRight else Icons.Rounded.FormatAlignLeft
 
     OutdoorTheme.Wrap {
         Row(modifier) {
-            FormatIconButton(onClick = onAlignStart) {
+            FormatIconButton(onClick = { onAlignmentChange(TextAlign.Start) }) {
                 Icon(
                     alignmentStartIcon,
                     contentDescription = "Text alignment start"
                 )
             }
 
-            FormatIconButton(onClick = onJustify) {
+            FormatIconButton(onClick = { onAlignmentChange(TextAlign.Justify) }) {
                 Icon(
                     Icons.Rounded.FormatAlignJustify,
                     contentDescription = "Text alignment justify"
                 )
             }
 
-            FormatIconButton(onClick = onCenter) {
+            FormatIconButton(onClick = { onAlignmentChange(TextAlign.Center) }) {
                 Icon(
                     Icons.Rounded.FormatAlignCenter,
                     contentDescription = "Text alignment center"
                 )
             }
 
-            FormatIconButton(onClick = onAlignEnd) {
+            FormatIconButton(onClick = { onAlignmentChange(TextAlign.End) }) {
                 Icon(
                     alignmentEndIcon,
                     contentDescription = "Text alignment end"

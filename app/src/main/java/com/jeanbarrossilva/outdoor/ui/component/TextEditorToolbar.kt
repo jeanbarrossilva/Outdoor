@@ -10,6 +10,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.jeanbarrossilva.outdoor.ui.defaults.OutdoorTheme
@@ -24,10 +25,7 @@ fun TextEditorToolbar(
     onTextSizeDecrease: () -> Unit,
     onTextSizeIncrease: () -> Unit,
     onBoldToggle: (Boolean) -> Unit,
-    onAlignStart: () -> Unit,
-    onJustify: () -> Unit,
-    onCenter: () -> Unit,
-    onAlignEnd: () -> Unit,
+    onAlignmentChange: (TextAlign) -> Unit,
     layout: @Composable (Dp) -> Unit
 ) {
     // TODO: Replace hardcoded padding value by the real TextEditorToolbar height.
@@ -72,15 +70,13 @@ fun TextEditorToolbar(
 
                         BoldButton(
                             isBold = isBold,
-                            onToggle = onBoldToggle
+                            onToggle = {
+                                isBold = it
+                                onBoldToggle(it)
+                            }
                         )
 
-                        AlignmentButtons(
-                            onAlignStart = onAlignStart,
-                            onJustify = onJustify,
-                            onCenter = onCenter,
-                            onAlignEnd = onAlignEnd
-                        )
+                        AlignmentButtons(onAlignmentChange = onAlignmentChange)
                     }
                 }
             }
