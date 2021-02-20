@@ -1,0 +1,9 @@
+<resources>
+    <style
+        name="Theme.Outdoor"
+        parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primaryVariant</item>
+        <item name="colorSecondary">@color/secondary</item>
+    </style>
+</resources>
