@@ -1,9 +1,29 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <style
         name="Theme.Outdoor"
         parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryVariant">@color/primaryVariant</item>
         <item name="colorSecondary">@color/secondary</item>
+        <item
+            name="android:windowLightStatusBar"
+            tools:targetApi="23">
+            true
+        </item>
+        <item
+            name="android:statusBarColor"
+            tools:targetApi="23">
+            @color/systemBar
+        </item>
+        <item
+            name="android:windowLightNavigationBar"
+            tools:targetApi="27">
+            true
+        </item>
+        <item
+            name="android:navigationBarColor"
+            tools:targetApi="27">
+            @color/systemBar
+        </item>
     </style>
 </resources>

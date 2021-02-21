@@ -14,15 +14,6 @@ import com.jeanbarrossilva.outdoor.R
 
 object OutdoorTheme {
     object Colors {
-        @Composable
-        private fun primary() = colorResource(R.color.primary)
-
-        @Composable
-        private fun primaryVariant() = colorResource(R.color.primaryVariant)
-
-        @Composable
-        private fun secondary() = colorResource(R.color.secondary)
-
         object Palette {
             @Composable
             private fun light() = lightColors(primary(), primaryVariant(), secondary())
@@ -33,6 +24,15 @@ object OutdoorTheme {
             @Composable
             fun dynamic() = if (isSystemInDarkTheme()) dark() else light()
         }
+
+        @Composable
+        private fun primary() = colorResource(R.color.primary)
+
+        @Composable
+        private fun primaryVariant() = colorResource(R.color.primaryVariant)
+
+        @Composable
+        private fun secondary() = colorResource(R.color.secondary)
     }
 
     @Composable

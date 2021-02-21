@@ -3,4 +3,5 @@
     <color name="primary">#FF6200EE</color>
     <color name="primaryVariant">#FF3700B3</color>
     <color name="secondary">#FF03DAC5</color>
+    <color name="systemBar">#F8F8F8</color>
 </resources>
