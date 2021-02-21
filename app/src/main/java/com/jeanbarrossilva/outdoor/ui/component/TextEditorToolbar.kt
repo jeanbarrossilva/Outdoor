@@ -45,7 +45,7 @@ fun TextEditorToolbar(
     var _text by remember { mutableStateOf(text) }
 
     val alpha = if (_isShown) 1f else 0f
-    var isEditingTextSize by remember { mutableStateOf(false) }
+    var isEditingText by remember { mutableStateOf(false) }
     var isBold by remember { mutableStateOf(false) }
 
     OutdoorTheme.Fill {
@@ -71,22 +71,22 @@ fun TextEditorToolbar(
             Column {
                 LazyRow {
                     item {
-                        TextSizeEditor(
+                        TextEditorToolbarInput(
                             text = _text,
-                            isEditing = isEditingTextSize,
-                            onToggleIcon = { isEditingTextSize = it },
+                            isEditing = isEditingText,
+                            onToggleIcon = { isEditingText = it },
                             onValueChange = {
                                 _text = it
                                 onTextChange(it)
                             }
                         )
 
-                        TextSizeEditor(
+                        TextEditorToolbarTextSizeButtons(
                             onDecrease = onTextSizeDecrease,
                             onIncrease = onTextSizeIncrease
                         )
 
-                        BoldButton(
+                        TextEditorToolbarBoldButton(
                             isBold = isBold,
                             onToggle = {
                                 isBold = it

@@ -29,7 +29,9 @@ fun MessageUI(
     activity: Activity,
     message: String = "Tap the text icon below and type something! You can also tap anywhere to hide the toolbar."
 ) {
-    var dynamicMessage by rememberSaveable { mutableStateOf(message) }
+    @Suppress("LocalVariableName")
+    var _message by rememberSaveable { mutableStateOf(message) }
+
     var size by rememberSaveable(saver = TextUnitMutableStateSaver) { mutableStateOf(14.sp) }
     var isBold by rememberSaveable { mutableStateOf(false) }
     var alignment by rememberSaveable { mutableStateOf(TextAlign.Center) }
@@ -44,15 +46,15 @@ fun MessageUI(
                 .align(Alignment.BottomCenter),
             activity,
             text = message,
-            onTextChange = { dynamicMessage = it },
+            onTextChange = { _message = it },
             onTextSizeDecrease = { if (size > 15.sp) size -= sizeDiff },
             onTextSizeIncrease = { if (size < 45.sp) size += sizeDiff },
             onBoldToggle = { isBold = it },
             onAlignmentChange = { alignment = it }
         ) { height ->
             Text(
-                dynamicMessage,
-                Modifier
+                _message,
+                modifier
                     .padding(bottom = height)
                     .padding(30.dp)
                     .align(Alignment.Center)

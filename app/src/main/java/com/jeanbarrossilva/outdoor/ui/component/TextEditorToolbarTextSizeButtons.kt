@@ -10,17 +10,17 @@ import androidx.compose.ui.Modifier
 import com.jeanbarrossilva.outdoor.ui.defaults.OutdoorTheme
 
 @Composable
-fun TextSizeEditor(modifier: Modifier = Modifier, onDecrease: () -> Unit, onIncrease: () -> Unit) {
+fun TextEditorToolbarTextSizeButtons(modifier: Modifier = Modifier, onDecrease: () -> Unit, onIncrease: () -> Unit) {
     OutdoorTheme.Wrap {
         Row(modifier) {
-            FormatIconButton(onClick = onDecrease) {
+            TextEditorToolbarFormatIconButton(onClick = onDecrease) {
                 Icon(
                     Icons.Rounded.ZoomOut,
                     contentDescription = "Decrease text size"
                 )
             }
 
-            FormatIconButton(onClick = onIncrease) {
+            TextEditorToolbarFormatIconButton(onClick = onIncrease) {
                 Icon(
                     Icons.Rounded.ZoomIn,
                     contentDescription = "Increase text size"

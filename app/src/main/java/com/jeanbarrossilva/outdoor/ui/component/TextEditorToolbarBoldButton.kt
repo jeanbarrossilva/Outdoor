@@ -7,8 +7,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
 @Composable
-fun BoldButton(modifier: Modifier = Modifier, isBold: Boolean, onToggle: (Boolean) -> Unit) {
-    FormatIconToggleButton(
+fun TextEditorToolbarBoldButton(modifier: Modifier = Modifier, isBold: Boolean, onToggle: (Boolean) -> Unit) {
+    TextEditorToolbarFormatIconToggleButton(
         modifier,
         isBold,
         onToggle

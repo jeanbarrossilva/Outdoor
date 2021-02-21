@@ -6,7 +6,7 @@ import androidx.compose.ui.Modifier
 import com.jeanbarrossilva.outdoor.ui.defaults.OutdoorTheme
 
 @Composable
-fun FormatIconToggleButton(
+fun TextEditorToolbarFormatIconToggleButton(
     modifier: Modifier = Modifier,
     isChecked: Boolean,
     onToggle: (Boolean) -> Unit,

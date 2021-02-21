@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import com.jeanbarrossilva.outdoor.ui.defaults.OutdoorTheme
 
 @Composable
-fun TextSizeEditor(
+fun TextEditorToolbarInput(
     modifier: Modifier = Modifier,
     text: String,
     isEditing: Boolean,
@@ -22,7 +22,7 @@ fun TextSizeEditor(
 ) {
     OutdoorTheme.Wrap {
         Row(modifier) {
-            FormatIconToggleButton(
+            TextEditorToolbarFormatIconToggleButton(
                 isChecked = isEditing,
                 onToggle = onToggleIcon
             ) {

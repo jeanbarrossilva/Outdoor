@@ -10,7 +10,7 @@ import com.jeanbarrossilva.outdoor.ui.defaults.OutdoorTheme
 val FormatButtonModifier = Modifier.padding(10.dp)
 
 @Composable
-fun FormatIconButton(modifier: Modifier = Modifier, onClick: () -> Unit, content: @Composable () -> Unit) {
+fun TextEditorToolbarFormatIconButton(modifier: Modifier = Modifier, onClick: () -> Unit, content: @Composable () -> Unit) {
     OutdoorTheme.Wrap {
         IconButton(
             onClick,

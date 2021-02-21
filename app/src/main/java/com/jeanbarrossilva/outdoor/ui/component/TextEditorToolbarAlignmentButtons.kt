@@ -20,28 +20,28 @@ fun AlignmentButtons(modifier: Modifier = Modifier, onAlignmentChange: (TextAlig
 
     OutdoorTheme.Wrap {
         Row(modifier) {
-            FormatIconButton(onClick = { onAlignmentChange(TextAlign.Start) }) {
+            TextEditorToolbarFormatIconButton(onClick = { onAlignmentChange(TextAlign.Start) }) {
                 Icon(
                     alignmentStartIcon,
                     contentDescription = "Text alignment start"
                 )
             }
 
-            FormatIconButton(onClick = { onAlignmentChange(TextAlign.Justify) }) {
+            TextEditorToolbarFormatIconButton(onClick = { onAlignmentChange(TextAlign.Justify) }) {
                 Icon(
                     Icons.Rounded.FormatAlignJustify,
                     contentDescription = "Text alignment justify"
                 )
             }
 
-            FormatIconButton(onClick = { onAlignmentChange(TextAlign.Center) }) {
+            TextEditorToolbarFormatIconButton(onClick = { onAlignmentChange(TextAlign.Center) }) {
                 Icon(
                     Icons.Rounded.FormatAlignCenter,
                     contentDescription = "Text alignment center"
                 )
             }
 
-            FormatIconButton(onClick = { onAlignmentChange(TextAlign.End) }) {
+            TextEditorToolbarFormatIconButton(onClick = { onAlignmentChange(TextAlign.End) }) {
                 Icon(
                     alignmentEndIcon,
                     contentDescription = "Text alignment end"
